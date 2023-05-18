@@ -1,9 +1,19 @@
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const navBarItems = <>
-        <li><a>Item 1</a></li>
-        <li><a>About</a></li>
-        <li><a>Item 3</a></li>
+        <NavLink to='/'
+        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Home
+        </NavLink>
+        <NavLink to='/all-toy'
+        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>All Toys</NavLink>
+        <NavLink to='/all-toys'
+        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>My Toys</NavLink>
+        <NavLink to='/all-toys'
+        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Add A Toy</NavLink>
+        <NavLink to='/all-toys'
+        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Blogs</NavLink>
+        
     </>
     return (
         <div className="navbar bg-base-100">
@@ -16,7 +26,7 @@ const Navbar = () => {
                         {navBarItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="btn btn-ghost normal-case text-xl">Fun Car Play</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
