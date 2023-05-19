@@ -1,12 +1,32 @@
 import { useLoaderData } from "react-router-dom";
+import ViewDetails from "../Shared/ViewDetails/ViewDetails";
+import { useState } from "react";
 
 const AllToys = () => {
-    const allToys = useLoaderData();
-    console.log(allToys)
+    const loadedAllToys = useLoaderData();
+    const [allToys, setAllToys] = useState(loadedAllToys)
+    const [toys, setToys] = useState({});
+
+    const handleSearch = event => {
+        event.preventDefault();
+        const text = event.target.text.value;
+        fetch(`http://localhost:5000/getCarsByText/${text}`)
+        .then(res=> res.json())
+        .then(data=> setAllToys(data))
+        console.log(text)
+    }
 
     return (
         <div>
-
+            <div className="form-control my-5 ">
+                <form onSubmit={handleSearch} className="input-group justify-center">
+                    <input type="text" name="text" placeholder="Search…" className="input input-bordered" />
+                    <button type="submit" className="btn btn-square">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    </button> 
+                </form>
+            </div>
+            <ViewDetails toys={toys}></ViewDetails>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -23,32 +43,32 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                        {allToys.map((toy, index) => 
-                        <tr key={toy._id}>
-                            <th>{index+1}</th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="w-28 h-28">
-                                            <img src={toy.image_url} />
+                        {allToys.map((toy, index) =>
+                            <tr key={toy._id}>
+                                <th>{index + 1}</th>
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="w-28 h-28">
+                                                <img src={toy.image_url} />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <div className="font-bold">{toy.name}</div>
-                                    <div className="text-sm opacity-50">added by: {toy.seller_name}</div>
-                                </div>
-                            </td>
-                            <td>{toy.sub_category}</td>
-                            <td>{toy.price} $</td>
-                            <td>{toy.quantity}</td>
-                            <th>
-                            <button className="btn btn-warning">View Details</button>
-                            </th>
-                        </tr>
-                        )} 
+                                </td>
+                                <td>
+                                    <div>
+                                        <div className="font-bold">{toy.name}</div>
+                                        <div className="text-sm opacity-50">added by: {toy.seller_name}</div>
+                                    </div>
+                                </td>
+                                <td>{toy.sub_category}</td>
+                                <td>{toy.price} $</td>
+                                <td>{toy.quantity}</td>
+                                <th>
+                                    <label onClick={() => setToys(toy)} htmlFor="toy-details" className="btn btn-warning">View Details</label>
+                                </th>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
