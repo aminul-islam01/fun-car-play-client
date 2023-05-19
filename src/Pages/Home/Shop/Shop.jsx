@@ -6,37 +6,46 @@ import 'react-tabs/style/react-tabs.css';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState(false);
     useEffect(() => {
-        fetch('/car.json')
+        fetch('http://localhost:5000/cars')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
-    console.log(products);
+    }, [allProducts])
 
     const handleCategory = (event) => {
-        console.log(event)
+        fetch(`http://localhost:5000/cars/${event}`)
+        .then(res => res.json())
+        .then(data => setProducts(data))
     }
 
     return (
         <div>
             <Tabs>
                 <TabList>
-                    <Tab onClick={() => handleCategory('title1')}>Title 1</Tab>
-                    <Tab onClick={() => handleCategory('title2')}>Title 2</Tab>
-                    <Tab onClick={() => handleCategory('title2')}>Title 2</Tab>
+                    <Tab onClick={() => setAllProducts(!allProducts)}>All</Tab>
+                    <Tab onClick={() => handleCategory('sportsCar')}>sportsCar</Tab>
+                    <Tab onClick={() => handleCategory('truck')}>truck</Tab>
+                    <Tab onClick={() => handleCategory('miniPoliceCar')}>miniPoliceCar</Tab>
                 </TabList>
 
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <h2>All categories</h2>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <h2>Categories by sportsCar</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Categories by truck</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Categories by miniPoliceCar</h2>
                 </TabPanel>
             </Tabs>
-            <div className="grid grid-cols-3 gap-10 my-20">
+            <div className="grid md:grid-cols-3 gap-10 my-20">
                 {
                     products.map(product => <ShopCard
-                        key={product.id}
+                        key={product._id}
                         product={product}></ShopCard>)
                 }
             </div>

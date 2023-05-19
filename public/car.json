@@ -1,8 +1,7 @@
 [
   {
-    "id": "1",
     "name": "Speed Racer",
-    "sub_category": "Hot Wheels",
+    "sub_category": "sportsCar",
     "quantity": 12,
     "seller_name": "Aminul",
     "seller_email": "abiddut953@gmail.com",
@@ -13,9 +12,8 @@
     "rating": 4.5
   },
   {
-    "id": "2",
     "name": "Off-Road Adventure",
-    "sub_category": "Matchbox",
+    "sub_category": "truck",
     "quantity": 12,
     "seller_name": "Aminul",
     "seller_email": "abiddut953@gmail.com",
@@ -26,9 +24,8 @@
     "rating": 4.2
   },
   {
-    "id": "3",
     "name": "Street Troopers",
-    "sub_category": "Maisto",
+    "sub_category": "sportsCar",
     "quantity": 12,
     "seller_name": "Aminul",
     "seller_email": "abiddut953@gmail.com",
@@ -39,9 +36,8 @@
     "rating": 4.7
   },
   {
-    "id": "4",
     "name": "Pixar Cars",
-    "sub_category": "Disney",
+    "sub_category": "miniPoliceCar",
     "quantity": 12,
     "seller_name": "Aminul",
     "seller_email": "abiddut953@gmail.com",
@@ -52,9 +48,8 @@
     "rating": 4.8
   },
   {
-    "id": "5",
     "name": "Mighty Dump Truck",
-    "sub_category": "Tonka",
+    "sub_category": "truck",
     "quantity": 12,
     "seller_name": "Aminul",
     "seller_email": "abiddut953@gmail.com",
@@ -65,9 +60,8 @@
     "rating": 4.6
   },
   {
-    "id": "6",
     "name": "Barbie Convertible",
-    "sub_category": "Mattel",
+    "sub_category": "miniPoliceCar",
     "quantity": 12,
     "seller_name": "Aminul",
     "seller_email": "abiddut953@gmail.com",
