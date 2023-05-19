@@ -9,7 +9,7 @@ const Navbar = () => {
         className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>All Toys</NavLink>
         <NavLink to='/all-toys'
         className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>My Toys</NavLink>
-        <NavLink to='/all-toys'
+        <NavLink to='/add-toys'
         className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Add A Toy</NavLink>
         <NavLink to='/all-toys'
         className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Blogs</NavLink>
