@@ -1,0 +1,81 @@
+[
+  {
+    "id": "1",
+    "name": "Speed Racer",
+    "sub_category": "Hot Wheels",
+    "quantity": 12,
+    "seller_name": "Aminul",
+    "seller_email": "abiddut953@gmail.com",
+    "color": "Red",
+    "price": 9.99,
+    "description": "Race through the tracks with this speedy red toy car from Hot Wheels.",
+    "image_url": "https://ae01.alicdn.com/kf/HTB1N1W7XhHBK1JjSZFvq6yKtXXaL/1-36-Metal-toy-car-limousine-kids-toy-cars-Doors-Openable-Pull-Back-vehicle-model-car.jpg_640x640.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": "2",
+    "name": "Off-Road Adventure",
+    "sub_category": "Matchbox",
+    "quantity": 12,
+    "seller_name": "Aminul",
+    "seller_email": "abiddut953@gmail.com",
+    "color": "Blue",
+    "price": 7.99,
+    "description": "Explore the great outdoors with this blue off-road adventure toy car by Matchbox.",
+    "image_url": "https://ae01.alicdn.com/kf/HTB1N1W7XhHBK1JjSZFvq6yKtXXaL/1-36-Metal-toy-car-limousine-kids-toy-cars-Doors-Openable-Pull-Back-vehicle-model-car.jpg_640x640.jpg",
+    "rating": 4.2
+  },
+  {
+    "id": "3",
+    "name": "Street Troopers",
+    "sub_category": "Maisto",
+    "quantity": 12,
+    "seller_name": "Aminul",
+    "seller_email": "abiddut953@gmail.com",
+    "color": "Yellow",
+    "price": 12.99,
+    "description": "Patrol the city streets with this yellow Street Troopers toy car from Maisto.",
+    "image_url": "https://ae01.alicdn.com/kf/HTB1N1W7XhHBK1JjSZFvq6yKtXXaL/1-36-Metal-toy-car-limousine-kids-toy-cars-Doors-Openable-Pull-Back-vehicle-model-car.jpg_640x640.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": "4",
+    "name": "Pixar Cars",
+    "sub_category": "Disney",
+    "quantity": 12,
+    "seller_name": "Aminul",
+    "seller_email": "abiddut953@gmail.com",
+    "color": "Lightning McQueen",
+    "price": 14.99,
+    "description": "Join Lightning McQueen and his friends on thrilling adventures with this Disney Pixar Cars toy car.",
+    "image_url": "https://ae01.alicdn.com/kf/HTB1N1W7XhHBK1JjSZFvq6yKtXXaL/1-36-Metal-toy-car-limousine-kids-toy-cars-Doors-Openable-Pull-Back-vehicle-model-car.jpg_640x640.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": "5",
+    "name": "Mighty Dump Truck",
+    "sub_category": "Tonka",
+    "quantity": 12,
+    "seller_name": "Aminul",
+    "seller_email": "abiddut953@gmail.com",
+    "color": "Yellow",
+    "price": 19.99,
+    "description": "Move mountains of fun with this mighty yellow dump truck toy by Tonka.",
+    "image_url": "https://ae01.alicdn.com/kf/HTB1N1W7XhHBK1JjSZFvq6yKtXXaL/1-36-Metal-toy-car-limousine-kids-toy-cars-Doors-Openable-Pull-Back-vehicle-model-car.jpg_640x640.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": "6",
+    "name": "Barbie Convertible",
+    "sub_category": "Mattel",
+    "quantity": 12,
+    "seller_name": "Aminul",
+    "seller_email": "abiddut953@gmail.com",
+    "color": "Pink",
+    "price": 24.99,
+    "description": "Take Barbie on stylish drives with this pink convertible toy car from Mattel.",
+    "image_url": "https://ae01.alicdn.com/kf/HTB1N1W7XhHBK1JjSZFvq6yKtXXaL/1-36-Metal-toy-car-limousine-kids-toy-cars-Doors-Openable-Pull-Back-vehicle-model-car.jpg_640x640.jpg",
+    "rating": 4.4
+  }
+]
+  
