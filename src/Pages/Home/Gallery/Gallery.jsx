@@ -7,8 +7,8 @@ import car6 from '../../../images/car6.jpg'
 
 const Gallery = () => {
     return (
-        <div className='my-28'>
-            <h2 className='text-4xl text-center mb-8'>Our Gallery</h2>
+        <div className='my-24'>
+            <h2 className='text-4xl font-semibold  text-center mb-12'>Our Gallery</h2>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-10 '>
                 <img className='w-full h-64 shadow-md hover:scale-125 ease-in duration-300 rounded-lg' src={car1} />
                 <img className='w-full h-64 shadow-md hover:scale-125 ease-in duration-300 rounded-lg' src={car2} />

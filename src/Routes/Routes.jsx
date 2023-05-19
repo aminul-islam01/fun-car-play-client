@@ -1,6 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import Home from "../Pages/Home/Home/Home";
 import App from "../App";
+import AllToys from "../Pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "all-toy",
-                element: "about"
+                element: <AllToys></AllToys>,
+                loader: () => fetch('http://localhost:5000/cars')
             }
         ]
     },

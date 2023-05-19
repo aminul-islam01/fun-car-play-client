@@ -21,6 +21,7 @@ const Shop = () => {
 
     return (
         <div>
+            <h2 className='text-4xl font-semibold text-yellow-400 text-center mb-10'>Our Products</h2>
             <Tabs>
                 <TabList>
                     <Tab onClick={() => setAllProducts(!allProducts)}>All</Tab>
