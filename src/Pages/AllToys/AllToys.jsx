@@ -10,7 +10,7 @@ const AllToys = () => {
     const handleSearch = event => {
         event.preventDefault();
         const text = event.target.text.value;
-        fetch(`http://localhost:5000/getCarsByText/${text}`)
+        fetch(`https://fun-car-play-server.vercel.app/getCarsByText/${text}`)
         .then(res=> res.json())
         .then(data=> setAllToys(data))
         console.log(text)
