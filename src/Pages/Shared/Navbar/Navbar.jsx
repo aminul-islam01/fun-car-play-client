@@ -1,21 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { UserContext } from "../../../Providers/Providers";
 
 const Navbar = () => {
+    const {user, logOut} = useContext(UserContext);
+
     const navBarItems = <>
         <NavLink to='/'
-        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Home
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Home
         </NavLink>
         <NavLink to='/all-toy'
-        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>All Toys</NavLink>
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>All Toys</NavLink>
         <NavLink to='/all-toys'
-        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>My Toys</NavLink>
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>My Toys</NavLink>
         <NavLink to='/add-toys'
-        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Add A Toy</NavLink>
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Add A Toy</NavLink>
         <NavLink to='/all-toys'
-        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Blogs</NavLink>
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Blogs</NavLink>
         <NavLink to='/register'
-        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Register</NavLink>
-        
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Register</NavLink>
+
     </>
     return (
         <div className="navbar bg-base-100 sticky top-0 z-20">
@@ -36,7 +40,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                {user?<>
+                <div className="w-10 rounded-full">
+                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+                <Link onClick={logOut} to="/" className="btn">Logout</Link>
+                </>
+                :<Link to="/login" className="btn">Login</Link>}
             </div>
         </div>
     );

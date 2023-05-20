@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Providers/Providers";
+import Swal from "sweetalert2";
 
 const Register = () => {
+    const { createUser, proFileUpdate } = useContext(UserContext)
     const [error, setError] = useState();
     const [show, setShow] = useState(false);
+
 
     const handleRegister = (event) => {
         setError('');
@@ -36,6 +40,26 @@ const Register = () => {
             setError("Confirm your password");
             return;
         }
+
+        createUser(email, password)
+            .then((result) => {
+                const registerUser = result.user;
+
+                proFileUpdate(registerUser, name, image);
+
+                form.reset();
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'user has been create successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+            });
     }
 
     return (
@@ -46,35 +70,35 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Name" className="input input-bordered" required/>
+                    <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input type="email" name="email" placeholder="Email" className="input input-bordered" required/>
+                    <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Image</span>
                     </label>
-                    <input type="text" name="image" placeholder="Image Url" className="input input-bordered" required/>
+                    <input type="text" name="image" placeholder="Image Url" className="input input-bordered" required />
                 </div>
                 <div className="form-control relative">
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type={show?'text':'password'} name="password" placeholder="Password" className="input input-bordered" required/>
+                    <input type={show ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
 
-                    {show?<FaEye onClick={() => setShow(!show)} className="absolute bottom-4 right-4 cursor-pointer"></FaEye>
-                    :<FaEyeSlash onClick={() => setShow(!show)} className="absolute bottom-4 right-4 cursor-pointer"></FaEyeSlash>}
+                    {show ? <FaEye onClick={() => setShow(!show)} className="absolute bottom-4 right-4 cursor-pointer"></FaEye>
+                        : <FaEyeSlash onClick={() => setShow(!show)} className="absolute bottom-4 right-4 cursor-pointer"></FaEyeSlash>}
 
                 </div>
                 <div className="form-control mb-3">
                     <label className="label">
                         <span className="label-text">Confirm Password</span>
                     </label>
-                    <input type={show?'text':'password'} name="confirmPassword" placeholder="Confirm Password" className="input input-bordered" required/>
+                    <input type={show ? 'text' : 'password'} name="confirmPassword" placeholder="Confirm Password" className="input input-bordered" required />
                 </div>
 
                 <p>if you have an account? please <Link to="/login" className="bg-lime-400 text-sm px-1 rounded-full font-semibold">Login</Link> </p>
