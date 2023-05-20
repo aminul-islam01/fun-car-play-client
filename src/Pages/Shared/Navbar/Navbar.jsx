@@ -13,6 +13,8 @@ const Navbar = () => {
         className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Add A Toy</NavLink>
         <NavLink to='/all-toys'
         className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Blogs</NavLink>
+        <NavLink to='/register'
+        className={({isActive}) => isActive ? "text-red-400 me-5":"me-5"}>Register</NavLink>
         
     </>
     return (

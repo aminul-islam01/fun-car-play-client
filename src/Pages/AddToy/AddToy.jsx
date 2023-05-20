@@ -14,6 +14,18 @@ const AddToy = () => {
         const description = form.description.value;
         const sub_category = form.Categories.value;
         const toy = {name, image_url, seller_name, seller_email, price, quantity, rating, description, sub_category};
+
+        fetch('http://localhost:5000/cars', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(toy)
+        })
+        .then(res=> res.json())
+        .then(data => {
+            console.log(data)
+        })
         console.log(name, image_url, seller_name, seller_email, price, quantity, rating, description, sub_category)
     }
 

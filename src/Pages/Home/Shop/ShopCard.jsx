@@ -14,7 +14,7 @@ const ShopCard = ({ product }) => {
     return (
         <div>
             <div className="shadow hover:shadow-lg rounded-md">
-                <img src={image_url} />
+                <img className="h-52 w-full" src={image_url} />
                 <div className="p-5">
                     <h2 className="text-2xl font-semibold">{name}</h2>
                     <div className="flex justify-between my-5">
