@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 const AddToy = () => {
 
@@ -24,13 +25,21 @@ const AddToy = () => {
         })
         .then(res=> res.json())
         .then(data => {
-            console.log(data)
+            if(data.acknowledged) {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Added successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }         
         })
-        console.log(name, image_url, seller_name, seller_email, price, quantity, rating, description, sub_category)
     }
 
     return (
-        <div className='bg-gray-300 p-10'>
+        <div className='bg-gray-300 p-10 my-10'>
+            <h2 className="text-3xl font-semibold text-center">Add A Toy</h2>
             <form onSubmit={handleAddToy}>
                 <div className="flex gap-5 mb-5">
                     <div className="form-control md:w-1/2">
