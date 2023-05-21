@@ -1,10 +1,12 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+    useTitle('All-toys');
     const loadedAllToys = useLoaderData();
     const [allToys, setAllToys] = useState(loadedAllToys)
-
+    
     const handleSearch = event => {
         event.preventDefault();
         const text = event.target.text.value;

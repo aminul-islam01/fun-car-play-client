@@ -3,10 +3,12 @@ import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { useContext, useState } from "react";
 import { UserContext } from "../../Providers/Providers";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 
 
 const Login = () => {
+    useTitle("login");
     const { loginUser, handleGoogleSignIn } = useContext(UserContext);
     const [show, setShow] = useState(false);
     const location = useLocation();

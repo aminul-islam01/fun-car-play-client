@@ -3,8 +3,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Providers/Providers";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
+    useTitle('register');
     const { createUser, proFileUpdate } = useContext(UserContext)
     const [error, setError] = useState();
     const [show, setShow] = useState(false);

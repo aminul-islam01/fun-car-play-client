@@ -3,13 +3,16 @@ import { UserContext } from "../../Providers/Providers";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Update from "../UpdateToy/Update";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 
 const MyToys = () => {
+    useTitle('my-toys');
     const { user } = useContext(UserContext);
     const [allToys, setAllToys] = useState([]);
     const [toys, setToys] = useState();
     const [update, setUpdate] = useState(false);
+
 
     const url = `https://fun-car-play-server.vercel.app/getCarByEmail/${user?.email}`
     useEffect(() => {

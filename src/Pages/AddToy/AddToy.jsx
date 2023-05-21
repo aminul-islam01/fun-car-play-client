@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { UserContext } from "../../Providers/Providers";
 
 const AddToy = () => {
+
+    const {user} = useContext(UserContext);
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -60,13 +64,13 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Seller Name</span>
                         </label>
-                        <input type="text" name="seller_name" placeholder="Seller name" className="input input-bordered" />
+                        <input type="text" name="seller_name" placeholder={user?.displayName} className="input input-bordered" />
                     </div>
                     <div className="form-control md:w-1/2">
                         <label className="label">
                             <span className="label-text">Seller Email</span>
                         </label>
-                        <input type="email" name="seller_email" placeholder="Seller email" className="input input-bordered" />
+                        <input type="email" name="seller_email" placeholder={user?.email} className="input input-bordered" />
                     </div>
                 </div>
                 <div className="flex gap-5 mb-5">
