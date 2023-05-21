@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const { loginUser } = useContext(UserContext);
+    const { loginUser, handleGoogleSignIn } = useContext(UserContext);
     const [show, setShow] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -65,8 +65,9 @@ const Login = () => {
                 <button type="submit" className="btn btn-block btn-primary my-5">Login</button>
             </form>
             <div className="divider">OR</div>
-            <button className="btn btn-block btn-outline btn-primary">
-                <FaGoogle></FaGoogle> Login With Google</button>
+            <button onClick={()=>handleGoogleSignIn(from, navigate)} 
+            className="btn btn-block btn-outline btn-primary">
+            <FaGoogle></FaGoogle> Login With Google</button>
         </div>
     );
 };

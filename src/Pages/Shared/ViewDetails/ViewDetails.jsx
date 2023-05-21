@@ -1,9 +1,8 @@
 
 
 const ViewDetails = ({ toys }) => {
-    console.log(toys)
     return (
-        <div className="h-fit">
+        <div>
             <input type="checkbox" id="toy-details" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">

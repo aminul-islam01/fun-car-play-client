@@ -98,7 +98,7 @@ const AddToy = () => {
                     </label>
                     <textarea name="description" id="" cols="30" rows="8" placeholder="Details" className="resize-none p-5"></textarea>
                 </div>
-                <button type="submit" className="btn btn-block btn-primary mt-5">Add Toy</button>
+                <button type="submit" className="btn btn-block btn-primary mt-5">Add To DB</button>
             </form>
         </div>
     );

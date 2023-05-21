@@ -11,7 +11,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink to='/all-toy'
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>All Toys</NavLink>
-        <NavLink to='/all-toys'
+        <NavLink to='/my-toys'
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>My Toys</NavLink>
         <NavLink to='/add-toys'
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Add A Toy</NavLink>
@@ -21,6 +21,7 @@ const Navbar = () => {
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Register</NavLink>
 
     </>
+    console.log(user)
     return (
         <div className="navbar bg-base-100 sticky top-0 z-20">
             <div className="navbar-start">
@@ -41,8 +42,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {user?<>
-                <div className="w-10 rounded-full">
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <div className="w-10 h-10 rounded-full overflow-hidden me-3 bg-slate-400">
+                    <img src={user.photoURL} />
                 </div>
                 <Link onClick={logOut} to="/" className="btn">Logout</Link>
                 </>
