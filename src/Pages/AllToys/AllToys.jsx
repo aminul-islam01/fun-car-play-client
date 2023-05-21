@@ -1,11 +1,9 @@
-import { useLoaderData } from "react-router-dom";
-import ViewDetails from "../Shared/ViewDetails/ViewDetails";
+import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 
 const AllToys = () => {
     const loadedAllToys = useLoaderData();
     const [allToys, setAllToys] = useState(loadedAllToys)
-    const [toys, setToys] = useState({});
 
     const handleSearch = event => {
         event.preventDefault();
@@ -25,7 +23,6 @@ const AllToys = () => {
                     </button> 
                 </form>
             </div>
-            <ViewDetails toys={toys}></ViewDetails>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -64,7 +61,7 @@ const AllToys = () => {
                                 <td>{toy.price} $</td>
                                 <td>{toy.quantity}</td>
                                 <th>
-                                    <label onClick={() => setToys(toy)} htmlFor="toy-details" className="btn btn-warning">View Details</label>
+                                    <Link to={`/details/${toy._id}`} className="btn btn-warning">View Details</Link>
                                 </th>
                             </tr>
                         )}

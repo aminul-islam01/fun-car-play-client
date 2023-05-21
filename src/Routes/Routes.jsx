@@ -7,11 +7,15 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import MyToys from "../Pages/MyToys/Mytoys";
 import Blog from "../Pages/Blog/Blog";
+import ToyDetails from "../Pages/Shared/ToyDetails/ToyDetails";
+import Error from "../Pages/Error/Error";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
@@ -41,6 +45,11 @@ const router = createBrowserRouter([
             {
                 path:"blog",
                 element: <Blog></Blog>
+            },
+            {
+                path: "details/:id",
+                element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`https://fun-car-play-server.vercel.app/singleCars/${params.id}`)
             }
         ]
     },

@@ -1,16 +1,9 @@
-
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const ShopCard = ({ product }) => {
-    const { _id, name, image_url, price, rating } = product;
-    const [toys, setToys] = useState({})
-    const handleDetails = (id) => {
-        fetch(`https://fun-car-play-server.vercel.app/cars/${id}`)
-            .then(res => res.json())
-            .then(data => setToys(data))
-        }
-        console.log(toys.name)
+    const {_id, name, image_url, price, rating } = product;
+
     return (
         <div>
             <div className="shadow hover:shadow-lg rounded-md">
@@ -22,7 +15,7 @@ const ShopCard = ({ product }) => {
                         <p> Ratings: {rating}</p>
                     </div>
                     <div className="flex justify-between">
-                        <button onClick={() => handleDetails(_id)} className="btn btn-warning">View Details</button>
+                        <Link to={`/details/${_id}`} className="btn btn-warning">View Details</Link>
                         <button className="btn btn-outline btn-warning">Buy Now</button>
                     </div>
                 </div>
