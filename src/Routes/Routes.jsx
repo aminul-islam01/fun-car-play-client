@@ -6,6 +6,7 @@ import AddToy from "../Pages/AddToy/AddToy";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import MyToys from "../Pages/MyToys/Mytoys";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: "all-toy",
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/cars')
+                loader: () => fetch('https://fun-car-play-server.vercel.app/cars')
             },
             {
                 path: "my-toys",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "register",
                 element: <Register></Register>
+            },
+            {
+                path:"blog",
+                element: <Blog></Blog>
             }
         ]
     },

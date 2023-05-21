@@ -8,13 +8,13 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
     const [allProducts, setAllProducts] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://fun-car-play-server.vercel.app/cars')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [allProducts])
 
     const handleCategory = (event) => {
-        fetch(`http://localhost:5000/cars/${event}`)
+        fetch(`https://fun-car-play-server.vercel.app/cars/${event}`)
         .then(res => res.json())
         .then(data => setProducts(data))
     }

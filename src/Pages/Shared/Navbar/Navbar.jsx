@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../Providers/Providers";
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const {user, logOut} = useContext(UserContext);
@@ -11,19 +12,17 @@ const Navbar = () => {
         </NavLink>
         <NavLink to='/all-toy'
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>All Toys</NavLink>
-        <NavLink to='/my-toys'
+        {user && <> <NavLink to='/my-toys'
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>My Toys</NavLink>
         <NavLink to='/add-toys'
-            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Add A Toy</NavLink>
-        <NavLink to='/all-toys'
+            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Add A Toy</NavLink> </>}
+        <NavLink to='/blog'
             className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Blogs</NavLink>
-        <NavLink to='/register'
-            className={({ isActive }) => isActive ? "text-red-400 me-5" : "me-5"}>Register</NavLink>
-
     </>
-    console.log(user)
+
     return (
-        <div className="navbar bg-base-100 sticky top-0 z-20">
+        <div className="navbar bg-slate-100 shadow sticky top-0 z-20">
+            <Tooltip id="my-tooltip" />
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +32,7 @@ const Navbar = () => {
                         {navBarItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Fun Car Play</a>
+                <Link to="/" className="text-xl font-semibold"><span className="text-yellow-400 font-bold font-serif">FunCar</span> Play</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -43,7 +42,11 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user?<>
                 <div className="w-10 h-10 rounded-full overflow-hidden me-3 bg-slate-400">
-                    <img src={user.photoURL} />
+                    <img className="cursor-pointer" src={user.photoURL}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user.displayName}
+                    data-tooltip-place="top"
+                    />
                 </div>
                 <Link onClick={logOut} to="/" className="btn">Logout</Link>
                 </>

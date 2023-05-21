@@ -16,7 +16,7 @@ const AddToy = () => {
         const sub_category = form.Categories.value;
         const toy = {name, image_url, seller_name, seller_email, price, quantity, rating, description, sub_category};
 
-        fetch('http://localhost:5000/cars', {
+        fetch('https://fun-car-play-server.vercel.app/cars', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

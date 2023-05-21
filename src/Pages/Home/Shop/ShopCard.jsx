@@ -6,7 +6,7 @@ const ShopCard = ({ product }) => {
     const { _id, name, image_url, price, rating } = product;
     const [toys, setToys] = useState({})
     const handleDetails = (id) => {
-        fetch(`http://localhost:5000/singleCar/${id}`)
+        fetch(`https://fun-car-play-server.vercel.app/cars/${id}`)
             .then(res => res.json())
             .then(data => setToys(data))
         }

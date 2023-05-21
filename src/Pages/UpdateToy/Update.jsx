@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-const Update = ({toys}) => {
+const Update = ({toys, setUpdate, update}) => {
     const handleUpdate = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -9,7 +9,7 @@ const Update = ({toys}) => {
         const description = form.description.value;
         const toy = { price, quantity, description };
 
-        fetch(`http://localhost:5000/cars/${toys._id}`, {
+        fetch(`https://fun-car-play-server.vercel.app/cars/${toys._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -27,6 +27,7 @@ const Update = ({toys}) => {
                         timer: 1500
                     })
                 }
+                setUpdate(!update);
             })
     }
     
